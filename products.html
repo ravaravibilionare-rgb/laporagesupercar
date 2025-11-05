@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Etalase — L'Apogée </title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-car">
+  <header class="navbar">
+    <div class="brand"><a href="index.html">L'Apogée </a></div>
+    <nav><img src="logo.png" alt="Logo" style="height:40px; margin-right:10px;">
+      <a href="index.html">Beranda</a>
+      <a href="products.html">Etalase</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="support.html">Customer Service</a>
+      <a href="social.html">Social</a>
+      <a href="about.html">Tentang</a>
+      <button id="cart-btn-top">Cart (<span id="cart-count-top">0</span>)</button>
+    </nav>
+  </header>
+
+  <main class="products-page">
+    <h2 class="page-title angular">Etalase Produk</h2>
+    <div id="products" class="product-grid"></div>
+
+    <aside class="cart-panel" id="cart-panel">
+      <h3>Keranjang</h3>
+      <div id="cart-items"></div>
+      <div class="cart-total">Total: <span id="cart-total">Rp0</span></div>
+      <button id="checkout-btn">Checkout</button>
+    </aside>
+
+    <div id="checkout-modal" class="modal hidden">
+      <div class="modal-content">
+        <h3>Checkout</h3>
+        <form id="checkout-form">
+          <label>Nama lengkap<input name="name" required></label>
+          <label>Email<input type="email" name="email" required></label>
+          <label>Alamat<textarea name="address" required></textarea></label>
+          <div class="order-summary" id="order-summary"></div>
+          <button type="submit">Pesan Sekarang</button>
+          <button type="button" id="close-checkout">Batal</button>
+        </form>
+      </div>
+    </div>
+  
+    <div id="payment-modal" class="modal hidden">
+      <div class="modal-content">
+        <h3>Pembayaran</h3>
+        <p>Metode: Kartu Kredit/Debit (demo). Masukkan data palsu untuk melanjutkan.</p>
+        <form id="payment-form">
+          <label>Nama pada Kartu<input name="card_name" required></label>
+          <label>Nomor Kartu<input name="card_number" pattern="\d*" maxlength="19" required></label>
+          <label>Expiry<input name="card_exp" placeholder="MM/YY" required></label>
+          <label>CVC<input name="card_cvc" pattern="\d*" maxlength="4" required></label>
+          <div class="payment-actions">
+            <button type="submit">Bayar Sekarang</button>
+            <button type="button" id="close-payment">Batal</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- File input for custom product images -->
+    <input type="file" id="custom-image-input" accept="image/*" style="display:none;">
+    
+</main>
+
+  <footer>
+    <p>&copy; 2025 Automobile</p>
+  </footer>
+
+  <script src="main.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", ()=>{
+    document.body.classList.add("fade-in");
+    document.querySelectorAll("nav a").forEach(a=>{
+        a.addEventListener("click", e=>{
+            e.preventDefault();
+            const url = a.getAttribute("href");
+            document.body.classList.add("fade-out");
+            setTimeout(()=> window.location.href = url, 450);
+        });
+    });
+});
+</script>
+</body>
+</html>

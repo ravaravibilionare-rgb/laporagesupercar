@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dashboard — L'Apogée </title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-car">
+  <header class="navbar">
+    <div class="brand"><a href="index.html">L'Apogée </a></div>
+    <nav><img src="logo.png" alt="Logo" style="height:40px; margin-right:10px;">
+      <a href="index.html">Beranda</a>
+      <a href="products.html">Etalase</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="support.html">Customer Service</a>
+      <a href="social.html">Social</a>
+      <a href="about.html">Tentang</a>
+    </nav>
+  </header>
+
+  <main class="dashboard">
+    <h2 class="angular">Dashboard Pengguna</h2>
+    <section class="profile">
+      <h3>Profil</h3>
+      <div id="profile-info">Belum login. Data disimpan di localStorage untuk demo.</div>
+      <button id="login-sim">Simulasikan Login</button>
+    </section>
+
+    <section class="orders">
+      <h3>Riwayat Pesanan</h3>
+      <div id="orders-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Automobile</p>
+  </footer>
+
+  <script src="main.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", ()=>{
+    document.body.classList.add("fade-in");
+    document.querySelectorAll("nav a").forEach(a=>{
+        a.addEventListener("click", e=>{
+            e.preventDefault();
+            const url = a.getAttribute("href");
+            document.body.classList.add("fade-out");
+            setTimeout(()=> window.location.href = url, 450);
+        });
+    });
+});
+</script>
+</body>
+</html>

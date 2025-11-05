@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Social — L'Apogée Automobile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-car">
+  <header class="navbar">
+    <div class="brand"><a href="index.html">L'Apogée </a></div>
+    <nav><img src="logo.png" alt="Logo" style="height:40px; margin-right:10px;">
+      <a href="index.html">Beranda</a>
+      <a href="products.html">Etalase</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="support.html">Customer Service</a>
+      <a href="social.html">Social</a>
+      <a href="about.html">Tentang</a>
+    </nav>
+  </header>
+
+  <main class="social-page">
+    <h2 class="angular">Akun Social Media</h2>
+    <p>Ikuti kami untuk konten, test drive, dan foto high-res supercar.</p>
+    <div class="social-grid">
+      <a class="social-card" href="https://www.instagram.com/akrvll?igsh=Nmt2MG1lMXRnbHlw&utm_source=qr" target="_blank">Instagram</a>
+      <a class="social-card" href="https://www.facebook.com/share/1BdZWaWz7z/?mibextid=wwXIfr" target="_blank">Facebook</a>
+      <a class="social-card" href="https://youtube.com/@vvacgroupid?si=Lw7XDEh4ZCy9jhyZ" target="_blank">YouTube</a>
+      <a class="social-card" href="https://www.tiktok.com/@ravaabdulravi2?_r=1&_t=ZS-917hW3uGB3B" target="_blank">TikTok</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Automobile</p>
+  </footer>
+  <script src="main.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", ()=>{
+    document.body.classList.add("fade-in");
+    document.querySelectorAll("nav a").forEach(a=>{
+        a.addEventListener("click", e=>{
+            e.preventDefault();
+            const url = a.getAttribute("href");
+            document.body.classList.add("fade-out");
+            setTimeout(()=> window.location.href = url, 450);
+        });
+    });
+});
+</script>
+</body>
+</html>

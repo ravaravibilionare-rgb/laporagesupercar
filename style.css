@@ -1,0 +1,73 @@
+/* Global styles */
+:root{
+  --accent:#ff3b3b;
+  --bg-dark:#0b0f14;
+  --card:#0f1620;
+  --glass: rgba(255,255,255,0.04);
+  --font-angular: 'Orbitron', sans-serif; /* angular-like font via Google Fonts */
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:var(--font-angular);background:linear-gradient(180deg,#071018 0%, #091622 100%);color:#e6eef6}
+
+.navbar{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:rgba(0,0,0,0.35);backdrop-filter:blur(6px);position:sticky;top:0;z-index:50}
+.navbar .brand a{color:var(--accent);text-decoration:none;font-weight:700;font-size:20px}
+.navbar nav a{color:#cfe6ff;margin:0 10px;text-decoration:none}
+.navbar nav button{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#fff;padding:6px 10px;border-radius:6px;cursor:pointer}
+
+.hero{position:relative;overflow:hidden;padding:40px 20px 120px;display:flex;align-items:center;min-height:520px}
+.hero-inner{z-index:10;max-width:720px}
+.hero h1{font-size:48px;margin:0 0 12px;color:white}
+.hero p{opacity:0.85}
+.cta{display:inline-block;margin-top:16px;padding:12px 18px;background:var(--accent);color:#111;border-radius:8px;text-decoration:none;font-weight:700}
+
+#bg-canvas{position:absolute;inset:0;z-index:1}
+.car-3d{position:absolute;right:6%;bottom:6%;width:420px;height:260px;z-index:20;border-radius:10px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,0.6)}
+
+/* Products */
+.products-page{padding:40px}
+.page-title{font-size:28px;margin-bottom:18px}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.product{background:var(--card);padding:14px;border-radius:10px;display:flex;flex-direction:column;gap:8px}
+.product img{width:100%;height:140px;object-fit:cover;border-radius:6px}
+.product .name{font-weight:700}
+.product .price{color:var(--accent);font-weight:700}
+
+/* Cart panel */
+.cart-panel{position:fixed;right:18px;top:120px;width:300px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:10px;backdrop-filter:blur(6px)}
+.cart-item{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,0.03)}
+
+/* Modal */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;z-index:60}
+.modal .modal-content{background:#071018;padding:20px;border-radius:8px;width:420px}
+.hidden{display:none}
+
+/* Dashboard */
+.dashboard{padding:30px}
+.profile, .orders{background:var(--card);padding:16px;border-radius:8px;margin-bottom:14px}
+
+/* Support */
+.support-page{padding:30px}
+.support-page form{max-width:640px;display:flex;flex-direction:column;gap:12px}
+.chat-widget{position:fixed;right:18px;bottom:18px;width:320px;background:var(--card);border-radius:10px;overflow:hidden}
+.chat-header{padding:8px;background:rgba(0,0,0,0.2)}
+
+/* Social */
+.social-grid{display:flex;gap:12px;flex-wrap:wrap}
+.social-card{display:inline-flex;padding:18px;border-radius:8px;background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));text-decoration:none;color:white}
+
+/* Utilities */
+.angular{font-family:var(--font-angular)}
+
+footer{padding:22px;text-align:center;color:#9fb6d3}
+
+/* small screens */
+@media(max-width:800px){
+  .car-3d{display:none}
+  .cart-panel{position:static;width:auto;margin:12px}
+}
+
+/* Animated blue streaks background (canvas) handled by JS */
+
+/* Page transition animation */
+.fade-out { opacity: 0; transition: opacity 0.5s ease-in; }
+.fade-in { opacity: 1; transition: opacity 0.5s ease-in; }
